@@ -2,11 +2,11 @@
 
 A FastAPI-based web scraper that extracts the latest news stories from Time.com and provides them through a RESTful API endpoint.
 
-## 📋 Overview
+## Overview
 
 This project scrapes news articles from Time.com by parsing H3 elements containing story links and titles. It extracts up to 6 recent stories and serves them through a FastAPI web service.
 
-## 🚀 Features
+## Features
 
 - Web Scraping: Fetches and parses HTML content from Time.com
 - Story Extraction: Extracts news story titles and links from H3 elements
@@ -14,7 +14,7 @@ This project scrapes news articles from Time.com by parsing H3 elements containi
 - Error Handling: Comprehensive error handling with appropriate HTTP status codes
 - Data Persistence: Saves scraped data to local files for caching
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 
@@ -41,7 +41,7 @@ uvicorn backend:app --reload
 
 The API will be available at `http://localhost:8000`
 
-## 📚 API Documentation
+## API Documentation
 
 ### GET `/getTimeStories`
 
@@ -79,7 +79,7 @@ Error (500):
 }
 ```
 
-📁 Project Structure
+ Project Structure
 
 ```
 assessment-backend-main/
@@ -90,7 +90,7 @@ assessment-backend-main/
 └── README.md          # Project documentation
 ```
 
-## 🔧 Core Components
+## Core Components
 
 `backend.py`
 - FastAPI application setup
@@ -105,7 +105,7 @@ assessment-backend-main/
 - `extract_href()`: Extracts URLs from anchor tags
 - `save_json()`: Saves data to JSON file
 
-## 🎯 Usage Examples
+## Usage Examples
 
 Basic API Call
 ```bash
@@ -130,7 +130,7 @@ for story in stories:
     print("---")
 ```
 
-## 🔍 How It Works
+## How It Works
 
 1. Data Fetching: The application downloads the Time.com homepage HTML
 2. HTML Parsing: Searches for `<h3>` elements containing story information
@@ -138,13 +138,13 @@ for story in stories:
 4. Data Cleaning: Removes HTML tags and formats the extracted text
 5. Response Formation: Returns a JSON array of story objects with title and link
 
-## ⚠️ Error Handling
+## Error Handling
 
 - HTTP 500: Server errors (network issues, parsing failures)
 - HTTP 502: When fewer than 6 stories are extracted
 - HTTP 200: Successful extraction of 6 or more stories
 
-## 🧪 Running Standalone
+## Running Standalone
 
 You can also run the scraper directly without the API:
 
@@ -158,7 +158,7 @@ This will:
 - Extract stories and save them to `stories.json`
 - Print the results to console
 
-## 📝 Notes
+## Notes
 
 - The scraper targets Time.com's current HTML structure and may need updates if the site structure changes
 - Cached data is stored in `site.txt` and `stories.json`
