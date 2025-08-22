@@ -6,7 +6,6 @@ from building_data import SITE_FILE, URL, getData, extract_h3_content, build_fin
 app = FastAPI(title="assignment demo")
 
 @app.get("/getTimeStories", response_class=JSONResponse)
-
 def get_time_stories(fetch: bool = True):
     try:
         if fetch:
